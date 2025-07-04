@@ -71,7 +71,7 @@ pip install flask
 ```yaml
 python sidebar.py
 ```
-5. 🌐 Buka di browser
+5. 🌐 Open your browser and visit
 ```yaml
 (http://127.0.0.1:5000)
 ```
@@ -80,7 +80,6 @@ python sidebar.py
 
 <div align="center">
 
-<img src="https://avatars.githubusercontent.com/u/yourusername" width="120" style="border-radius: 50%;" alt="Dewi Atika Muthi"/>
 
 ### 👋 Hi, I’m **Dewi Atika Muthi**
 
@@ -89,9 +88,5 @@ python sidebar.py
 🎯 *Passionate about Web, Mobile, and User-Centered Design*
 
 <br/>
-
-[![GitHub](https://img.shields.io/badge/GitHub-dewiatikamuthi-181717?style=for-the-badge&logo=github)](https://github.com/dewiatikamuthi)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-dewiatikamuthi-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/dewiatikamuthi)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Me-green?style=for-the-badge&logo=google-chrome)](#)
 
 </div>
