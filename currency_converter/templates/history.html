@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conversion History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_converter.css') }}">
+    <style>
+        .history-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .history-header h1 {
+            color: #e94560;
+            font-size: 2.5rem;
+        }
+
+        .history-header p {
+            color: #ccc;
+        }
+
+        .history-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(15, 52, 96, 0.3);
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 200px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card h2 {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .stat-card p {
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        .converter-card {
+            background: rgba(15, 52, 96, 0.3);
+            border-radius: 15px;
+            padding: 25px 30px;
+            border-left: 4px solid #e94560;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .converter-card h3 {
+            color: #e94560;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .conversion-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .conversion-item {
+            background: rgba(26, 26, 46, 0.5);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .conversion-data {
+            font-weight: bold;
+            color: #e94560;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .conversion-data .from {
+            color: #4ade80;
+        }
+
+        .conversion-data .to {
+            color: #f87171;
+        }
+
+        .conversion-data .arrow {
+            color: #fff;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .clear-btn {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            float: right;
+            margin-bottom: 20px;
+        }
+
+        .no-history {
+            text-align: center;
+            color: #ccc;
+            margin-top: 50px;
+        }
+
+        .no-history img {
+            width: 100px;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+
+        .no-history .title {
+            color: #e94560;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="converter-container">
+        <div class="history-header">
+            <h1>Conversion History</h1>
+            <p>Track your recent currency conversions</p>
+        </div>
+
+        <div class="history-stats">
+            <div class="stat-card">
+                <h2>{{ stats.total }}</h2>
+                <p>Total Conversions</p>
+            </div>
+            <div class="stat-card">
+                <h2>{{ stats.most_from }}</h2>
+                <p>Most Used From</p>
+            </div>
+            <div class="stat-card">
+                <h2>{{ stats.most_to }}</h2>
+                <p>Most Used To</p>
+            </div>
+            <div class="stat-card">
+                <h2>{{ stats.total_amount }}</h2>
+                <p>Total Amount</p>
+            </div>
+        </div>
+
+        <div class="converter-card">
+            <div class="header">
+                <h3>📄 Recent Conversions</h3>
+                <button class="clear-btn" onclick="clearHistory()">🗑️ Clear History</button>
+            </div>
+
+            {% if history %}
+            <ul class="conversion-list">
+                {% for item in history %}
+                <li class="conversion-item">
+                    <div class="conversion-data">
+                        <span class="from">{{ "%.2f"|format(item.amount) }} {{ item.from }}</span>
+                        <span class="arrow">→</span>
+                        <span class="to">{{ "%.2f"|format(item.result) }} {{ item.to }}</span>
+                    </div>
+                    <div class="meta">{{ item.timestamp }}</div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="no-history">
+                <div class="emoji">📆</div>
+                <p class="title">No Conversion History</p>
+                <p class="desc">Your previous conversion data will appear here once available.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function clearHistory() {
+            if (confirm("Are you sure you want to clear all conversion history?")) {
+                fetch("/clear-history", { method: "POST" })
+                    .then(() => window.location.reload());
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<div class="landing-container">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_landing_page.css') }}">
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">💰 Currency Hub</h1>
+            <p class="hero-subtitle">
+                Your ultimate destination for real-time currency exchange rates,<br>
+                conversions, and financial insights.
+            </p>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-icon">🌍</span>
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Currencies</div>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">⚡</span>
+            <div class="stat-number">Real-time</div>
+            <div class="stat-label">Updates</div>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">🔒</span>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Secure</div>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">📱</span>
+            <div class="stat-number">Mobile</div>
+            <div class="stat-label">Friendly</div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+        <h2 class="section-title">Why Choose Currency Hub?</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <div class="feature-title">Global Coverage</div>
+                <div class="feature-desc">
+                    Access exchange rates for 150+ currencies from around the world.
+                    From major currencies like USD, EUR, GBP to exotic ones.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <div class="feature-title">Smart Converter</div>
+                <div class="feature-desc">
+                    Convert any amount between currencies with real-time rates.
+                    Smart calculations with precision up to 4 decimal places.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Conversion History</div>
+                <div class="feature-desc">
+                    Keep track of all your conversions with detailed history.
+                    Export data and analyze your currency exchange patterns.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Lightning Fast</div>
+                <div class="feature-desc">
+                    Get instant results with our optimized backend.
+                    No waiting, no delays - just accurate data when you need it.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <div class="feature-title">Modern Design</div>
+                <div class="feature-desc">
+                    Beautiful, intuitive interface that works seamlessly
+                    across all devices. Dark theme optimized for comfort.
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <div class="feature-title">Privacy First</div>
+                <div class="feature-desc">
+                    Your data stays private. No tracking, no ads,
+                    no unnecessary data collection. Just pure functionality.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h3 class="cta-title">Ready to Get Started?</h3>
+        <p class="cta-desc">
+            Explore our features using the navigation menu on the left.
+            Start with viewing all currencies or try our converter!
+        </p>
+    </div>
+
+    <div class="last-updated">
+        Last updated: {{ current_time }} • Made with ❤️ for currency enthusiasts
+    </div>
+</div>
