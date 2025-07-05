@@ -78,7 +78,7 @@ python sidebar.py
 
 ---
 ## Output
-| Fitur         | Gambar |
+| Fiture         | Picture |
 |---------------|--------|
 | All Currencies| <img src="images/image2.png" width="300"/> |
 | Converter 1   | <img src="images/image3.png" width="300"/> |
