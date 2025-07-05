@@ -76,6 +76,15 @@ python sidebar.py
 (http://127.0.0.1:5000)
 ```
 
+---
+## Output
+| Fitur         | Gambar |
+|---------------|--------|
+| All Currencies| <img src="images/image2.png" width="300"/> |
+| Converter 1   | <img src="images/image3.png" width="300"/> |
+| Converter 2   | <img src="images/image4.png" width="300"/> |
+| History Converter   | <img src="images/image5.png" width="300"/> |
+
 ## 🧑‍💻 Author
 
 <div align="center">
