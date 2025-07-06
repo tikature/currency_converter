@@ -52,7 +52,7 @@ Design Pattern:
 
 1. 📦 Clone repository
 ```yaml
-git clone https://github.com/yourusername/currency-converter.git
+git clone https://github.com/tikature/currency-converter.git
 cd currency-converter
 ```
 2. 🧪 (Optional) Create a virtual environment
