@@ -78,7 +78,6 @@ def clear_history():
     return jsonify({"status": "cleared"})
 
 
-if __name__ == '__main__':
-    print("\U0001F680 Starting Currency Hub...")
-    print("\U0001F4F1 Open: http://localhost:5000")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+
+
+app = app
