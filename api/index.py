@@ -42,6 +42,9 @@ def save_to_history(data):
 def home():
     return render_page("Welcome to Currency Hub", get_landing_content(), "home")
 
+def hello():
+    return jsonify({"message": "Hello from Flask on Vercel!"})
+
 @app.route('/currencies')
 def currencies():
     return render_page("All Currencies", get_all_currencies_content(), "currencies")
