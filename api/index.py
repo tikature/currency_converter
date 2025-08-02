@@ -77,8 +77,4 @@ def clear_history():
     open(HISTORY_FILE, "w").write("[]")
     return jsonify({"status": "cleared"})
 
-if __name__ == '__main__':
-    app.run(debug=True)
-    
-    
-handler = app
+app = app
